@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Library app for managing book collection"
+    />
+    <title>Library App | Manage Your Book Collection</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script
+      defer
+      src="https://kit.fontawesome.com/c49afec75b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header role="banner" class="bg-[#094FC3] py-4">
+      <div
+        class="container mx-auto px-4 flex align-items justify-center flex-wrap gap-5 md:justify-between"
+      >
+        <h1 class="text-2xl font-bold text-white">Library App</h1>
+
+        <input
+          type="text"
+          id="search-bar"
+          name="search-bar"
+          class="form-input max-w-full md:max-w-[500px] lg:max-w-[600px]"
+          placeholder="Search Title or Author"
+        />
+      </div>
+    </header>
+
+    <main id="main" role="main" class="container mx-auto px-4 py-8">
+      <div class="flex flex-col md:flex-row md:justify-end mb-4 gap-4">
+        <button
+          id="add-button"
+          class="btn btn-primary"
+          aria-label="Add new book"
+        >
+          Add Book
+        </button>
+        <button
+          id="clear-button"
+          class="btn btn-danger"
+          aria-label="Clear Library"
+        >
+          Clear Library
+        </button>
+      </div>
+      <div
+        role="list"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        id="book-list"
+      ></div>
+    </main>
+
+    <footer role="contentinfo" class="bg-[#094FC3] text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        Library App &copy; 2023
+      </div>
+    </footer>
+
+    <div id="modal" class="modal">
+      <div class="content">
+        <div class="header">
+          <h2 id="form-title">Add Book</h2>
+          <button
+            id="close-button"
+            class="close-button"
+            aria-label="Close form"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form id="book-form" aria-label="Add new book form">
+          <div class="form-control">
+            <label for="title-input" class="form-label">Title</label>
+            <input
+              type="text"
+              id="title-input"
+              class="form-input"
+              required
+              aria-label="Enter book title"
+            />
+          </div>
+
+          <div class="form-control">
+            <label for="author-input" class="form-label">Author</label>
+            <input
+              type="text"
+              id="author-input"
+              class="form-input"
+              required
+              aria-label="Enter book author"
+            />
+          </div>
+
+          <div class="form-control">
+            <label for="cover-input" class="form-label">Cover Image URL</label>
+            <input
+              type="url"
+              id="cover-input"
+              class="form-input"
+              aria-label="Enter book cover image URL"
+            />
+          </div>
+
+          <div class="form-control">
+            <label class="toggle-switch" for="is-read-checkbox">
+              <input
+                type="checkbox"
+                aria-label="Has this book been read or not?"
+                id="is-read-checkbox"
+              />
+              <span class="toggle-switch-slider"></span>
+              <span class="status-text">Read?</span>
+            </label>
+          </div>
+
+          <button
+            id="submit-button"
+            type="submit"
+            class="btn btn-primary"
+            aria-label="Submit form"
+          >
+            Add Book
+          </button>
+        </form>
+      </div>
+    </div>
+    <script type="module" async src="app.js"></script>
+  </body>
+</html>
